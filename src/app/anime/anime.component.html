@@ -1,3 +1,61 @@
-<p>
-  anime works!
-</p>
+Filter by Text
+<input class="form-control" name="title" #title="ngModel" 
+[(ngModel)]="titletext">
+<button type="button" (click)="searchbytext(title)">Search by Text</button>
+<br>
+Filter by gender
+
+<input class="form-control" name="gender" #gender="ngModel" 
+[(ngModel)]="gendertext">
+<button type="button" (click)="searchbygender(gender)">Search by Gender</button>
+<br>
+
+<button type="button" (click)="ngOnInit()">Show all</button>
+<br>
+<table>
+    <tr>
+        <td></td>
+        <td>
+            <a style="cursor: pointer" (click)="paginateAnterior()" >
+                Previous
+            </a></td>
+        <td>
+            <a style="cursor: pointer" (click)="paginate()">
+                Next
+            </a></td>
+        <td></td>
+    </tr>
+</table>
+<br>
+<table class="table table-sm table-hover">
+    <thead>
+        <th>id</th>
+        <th>canonicalTitle</th>
+        <th>averageRating</th>
+        <th>startDate</th>
+        <th>endDate</th>
+        <th>status</th>
+        <th>posterImage</th>
+        <!-- <th>Detail</th> -->
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of arreglo">
+            <td>{{row.id}}</td>
+            <td>{{row.canonicalTitle}}</td>
+            <td>{{row.averageRating}}</td>
+            <td>{{row.startDate}}</td>
+            <td>{{row.endDate}}</td>
+            <td>{{row.status}}</td>
+            <td><img src='{{ row.posterImage }}' height="42" width="42" /></td>
+            <td>
+                <a style="cursor: pointer" (click)="detail(row.id)">
+                    See detail
+                </a>
+
+
+            </td>
+        </tr>
+    </tbody>
+
+
+</table>
