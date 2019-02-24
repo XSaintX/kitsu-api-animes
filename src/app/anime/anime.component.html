@@ -1,12 +1,10 @@
 Filter by Text
-<input class="form-control" name="title" #title="ngModel" 
-[(ngModel)]="titletext">
+<input class="form-control" name="title" #title="ngModel" [(ngModel)]="titletext">
 <button type="button" (click)="searchbytext(title)">Search by Text</button>
 <br>
 Filter by gender
 
-<input class="form-control" name="gender" #gender="ngModel" 
-[(ngModel)]="gendertext">
+<input class="form-control" name="gender" #gender="ngModel" [(ngModel)]="gendertext">
 <button type="button" (click)="searchbygender(gender)">Search by Gender</button>
 <br>
 
@@ -16,7 +14,7 @@ Filter by gender
     <tr>
         <td></td>
         <td>
-            <a style="cursor: pointer" (click)="paginateAnterior()" >
+            <a style="cursor: pointer" (click)="paginateAnterior()">
                 Previous
             </a></td>
         <td>
@@ -29,7 +27,9 @@ Filter by gender
 <br>
 <table class="table table-sm table-hover">
     <thead>
-        <th>id</th>
+        <div style="display:none;">
+            <th>id</th>
+        </div>
         <th>canonicalTitle</th>
         <th>averageRating</th>
         <th>startDate</th>
@@ -40,7 +40,9 @@ Filter by gender
     </thead>
     <tbody>
         <tr *ngFor="let row of arreglo">
-            <td>{{row.id}}</td>
+            <div style="display:none;">
+                <td>{{row.id}}</td>
+            </div>
             <td>{{row.canonicalTitle}}</td>
             <td>{{row.averageRating}}</td>
             <td>{{row.startDate}}</td>
