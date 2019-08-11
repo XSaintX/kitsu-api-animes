@@ -10,9 +10,7 @@ export class KitsuService {
 
   public apiUrl: any = 'https://kitsu.io';
 
-  constructor(
-
-    public http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   public headers = new HttpHeaders({
     'Accept': 'application/vnd.api+json',

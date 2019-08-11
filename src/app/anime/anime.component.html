@@ -1,25 +1,32 @@
-Filter by Text
-<input class="form-control" name="title" #title="ngModel" [(ngModel)]="titletext">
-<button type="button" (click)="searchbytext(title)">Search by Text</button>
-<br>
-Filter by gender
+<div class="row">
+    <div class="col-sm-4">Filter by Canonical Title</div>
+    <div class="col-sm-4"><input class="form-control" name="title" #title="ngModel" [(ngModel)]="titletext"></div>
+    <div class="col-sm-4"><button type="button" (click)="searchbytext(titletext)">Search</button></div>
+</div>
 
-<input class="form-control" name="gender" #gender="ngModel" [(ngModel)]="gendertext">
-<button type="button" (click)="searchbygender(gender)">Search by Gender</button>
-<br>
+<div class="row">
+    <div class="col-sm-4">Filter Gender</div>
+    <div class="col-sm-4"><input class="form-control" name="gender" #gender="ngModel" [(ngModel)]="gendertext"></div>
+    <div class="col-sm-4"><button type="button" (click)="searchbygender(gendertext)">Search</button></div>
+</div>
 
-<button type="button" (click)="ngOnInit()">Show all</button>
-<br>
-<table>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><button type="button" (click)="ngOnInit()">Show all</button></div>
+</div>
+
+
+<table class="table table-bordered table-striped text-center">
     <tr>
         <td></td>
         <td>
             <a style="cursor: pointer" (click)="paginateAnterior()">
-                Previous
+                <<
             </a></td>
         <td>
             <a style="cursor: pointer" (click)="paginate()">
-                Next
+                >>
             </a></td>
         <td></td>
     </tr>
